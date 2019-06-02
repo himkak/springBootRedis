@@ -26,4 +26,7 @@ public class SchoolService {
 		return studentRepo.getStudentsOfSchool(schoolName, startIndex, endIndex);
 	}
 
+	public void deleteStudents(String schoolName) {
+		studentRepo.deleteStudents(schoolName);
+	}
 }

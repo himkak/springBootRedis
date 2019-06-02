@@ -36,9 +36,9 @@ public class SchoolController {
 	}
 	
 	//@CacheEvict(value = "students", allEntries=true)
-	@DeleteMapping
-	public void deleteCache() {
-		
+	@DeleteMapping("/{schoolName}")
+	public void deleteCache(@PathVariable String schoolName) {
+		studentService.deleteStudents(schoolName);
 	}
 
 }

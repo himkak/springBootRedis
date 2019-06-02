@@ -19,10 +19,7 @@ public class RedisConfiguration {
 	public RedisTemplate<String, Object> redisTemplate() {
 		final RedisTemplate<String, Object> redisTemplate = new RedisTemplate<String, Object>();
 		redisTemplate.setKeySerializer(new StringRedisSerializer());
-		
 		redisTemplate.setValueSerializer(new StudentSerializer());
-		//redisTemplate.setValueSerializer(new JdkSerializationRedisSerializer());
-		
 		redisTemplate.setConnectionFactory(connfactory);
 		return redisTemplate;
 	}

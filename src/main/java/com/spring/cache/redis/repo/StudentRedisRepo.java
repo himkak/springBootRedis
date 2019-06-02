@@ -27,5 +27,9 @@ public class StudentRedisRepo {
 		redisTemplate.opsForList().leftPushAll(schoolName, students);
 		redisTemplate.expire(schoolName, 50, TimeUnit.SECONDS);
 	}
+	
+	public void deleteStudents(String schoolName) {
+		redisTemplate.delete(schoolName);
+	}
 
 }
