@@ -21,9 +21,9 @@ public class SchoolService {
 		studentRepo.saveSchoolStudents(student, schoolName);
 	}
 
-	public List<Student> getStudents(String schoolName) {
+	public List<Student> getStudents(String schoolName, int startIndex, int endIndex) {
 		System.out.println("Called getStudents service");
-		return studentRepo.getStudentsOfSchool(schoolName);
+		return studentRepo.getStudentsOfSchool(schoolName, startIndex, endIndex);
 	}
 
 }

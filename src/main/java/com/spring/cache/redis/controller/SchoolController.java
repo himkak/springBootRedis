@@ -28,9 +28,11 @@ public class SchoolController {
 	}
 	
 	//@Cacheable(value = "students")
-	@GetMapping("/{schoolName}")
-	public List<Student> getStudents(@PathVariable String schoolName){
-		return studentService.getStudents(schoolName);
+	@GetMapping(value="/{schoolName}", params = { "page", "size" })
+	public List<Student> getStudents(@PathVariable String schoolName, int page, int size){
+		int endIndex=page*size;
+		int startIndex=endIndex-size;
+		return studentService.getStudents(schoolName, startIndex, endIndex);
 	}
 	
 	//@CacheEvict(value = "students", allEntries=true)
